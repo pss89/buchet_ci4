@@ -30,7 +30,8 @@ class Session extends BaseConfig
      *
      * The session cookie name, must contain only [0-9a-z_-] characters
      */
-    public string $cookieName = 'ci_session';
+    // public string $cookieName = 'ci_session';
+    public string $cookieName = 'BCSI'; // BUCHET SESSION ID
 
     /**
      * --------------------------------------------------------------------------
@@ -40,7 +41,7 @@ class Session extends BaseConfig
      * The number of SECONDS you want the session to last.
      * Setting to 0 (zero) means expire when the browser is closed.
      */
-    public int $expiration = 7200;
+    public int $expiration = 7200; // 2 hours
 
     /**
      * --------------------------------------------------------------------------
@@ -57,7 +58,8 @@ class Session extends BaseConfig
      *
      * IMPORTANT: You are REQUIRED to set a valid save path!
      */
-    public string $savePath = WRITEPATH . 'session';
+    // public string $savePath = WRITEPATH . 'session';
+    public string $savePath = 'tb_ci_sessions'; // Table name for DatabaseHandler
 
     /**
      * --------------------------------------------------------------------------
