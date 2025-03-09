@@ -27,6 +27,9 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+    protected $agent;
+    protected $isMobile;
+    protected $db;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -35,7 +38,8 @@ abstract class BaseController extends Controller
      *
      * @var list<string>
      */
-    protected $helpers = [];
+    // protected $helpers = [];
+    protected $helpers = ['common'];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -54,5 +58,9 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = service('session');
+
+        // agent 정보
+        $this->agent = getUserAgent();
+        $this->isMobile = $this->agent['isMobile'];
     }
 }

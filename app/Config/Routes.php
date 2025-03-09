@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Main::index');
 // $routes->get('/test', 'Home::test');
 $routes->get('/join', 'Join::index');
+$routes->post('/join', 'Join::store');
 
 $routes->group('admin', function ($routes) {
     $routes->get('/', 'Admin\Main::index');
